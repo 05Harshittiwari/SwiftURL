@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d8e2ff",
+                    "secondary": "#535f73",
+                    "tertiary": "#004b59",
+                    "background": "#faf9ff",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#576377",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#d4e0f8",
+                    "inverse-surface": "#1d3054",
+                    "error-container": "#ffdad6",
+                    "outline": "#737685",
+                    "tertiary-fixed-dim": "#48d7f9",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#afecff",
+                    "tertiary-container": "#006477",
+                    "inverse-primary": "#b2c5ff",
+                    "on-background": "#051a3e",
+                    "on-secondary-fixed": "#101c2d",
+                    "on-primary-container": "#c4d2ff",
+                    "on-tertiary-fixed": "#001f27",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#76e2ff",
+                    "surface-container-high": "#e1e8ff",
+                    "surface-dim": "#ccdaff",
+                    "surface-bright": "#faf9ff",
+                    "secondary-fixed": "#d7e3fb",
+                    "on-secondary-fixed-variant": "#3b475b",
+                    "on-surface-variant": "#434654",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "secondary-fixed-dim": "#bbc7de",
+                    "on-tertiary-fixed-variant": "#004e5d",
+                    "surface-tint": "#0c56d0",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c3c6d6",
+                    "surface-variant": "#d8e2ff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#0052cc",
+                    "surface": "#faf9ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "surface-container": "#e9edff",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "primary": "#003d9b",
+                    "on-primary-fixed": "#001848",
+                    "surface-container-low": "#f1f3ff",
+                    "on-surface": "#051a3e",
+                    "primary-fixed": "#dae2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "max_width": "1280px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "margin": "48px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf9ff;
+            color: #051a3e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+</style>
+</head>
+<body class="font-body-md antialiased min-h-screen flex flex-col">
+
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-white border-b border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-blue-700">ShortenIt</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1 font-sans text-sm" href="#">Dashboard</a>
+<a class="text-slate-600 font-medium hover:bg-slate-50 transition-colors duration-200 font-sans text-sm" href="#">Analytics</a>
+<a class="text-slate-600 font-medium hover:bg-slate-50 transition-colors duration-200 font-sans text-sm" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 font-medium text-sm hover:bg-slate-50 px-3 py-2 rounded transition-colors">Sign Out</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKgELMIvocRvhsNq0oRkPcFS5pFMvv_U3bzB71L4KOwWBk7x8gLCrLzeNlwUCSaCMt4_N8bL-NmYYSlXATHuQBWQk1Hi9WgHfnLa_6jYS5H7t2WSLRQ6B3Yn5v5KJaBDkqfjDi5RH7MAb5UxJR0Q8Iih2uGMJA4H6gLnAUh5UOOCxvP8LFTAZJD1KWe3mfLTgmTz6eZ4vU3IVGK-Vr113y6RU4Gr1TFSI9fztdS9JZJmH3gRapyqq6_dITpOMq5wb3j3qKcGioShU"/>
+</div>
+</div>
+</div>
+</header>
+
+<main class="flex-grow max-w-[1280px] mx-auto w-full px-6 py-12">
+
+  <!-- Input Section -->
+  <section class="mb-12">
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant">
+      <div class="flex flex-col gap-2 mb-6">
+        <h1 class="font-h1 text-h1 text-on-background">Optimize Your Reach</h1>
+        <p class="font-body-lg text-body-lg text-secondary">Paste your long URL below to create a concise, trackable link.</p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="relative flex-grow">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">link</span>
+          <!-- ✅ FIX 1: id="url-input" added -->
+          <input id="url-input" class="w-full pl-12 pr-4 py-4 rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none bg-surface-bright font-body-md" placeholder="https://example.com/very/long/path/to/content" type="text"/>
+        </div>
+        <!-- ✅ FIX 2: id="shorten-btn" + onclick added -->
+        <button id="shorten-btn" onclick="shortenUrl()" class="bg-primary-container text-white px-8 py-4 rounded-lg font-label-md hover:bg-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+          <!-- ✅ FIX 3: id="btn-text" added to span -->
+          <span id="btn-text">Shorten</span>
+          <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+        </button>
+      </div>
+
+      <!-- ✅ RESULT BOX — hidden until a URL is shortened -->
+      <div id="result-box" style="display:none; margin-top:16px; padding:16px;
+        background:#f1f3ff; border:1px solid #c3c6d6; border-radius:8px;">
+        <p style="font-size:13px; color:#535f73; margin-bottom:6px;">Your short link:</p>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <a id="result-link" href="#" target="_blank"
+            style="color:#003d9b; font-size:14px; word-break:break-all;"></a>
+          <button onclick="copyResult()"
+            style="background:#0052cc; color:white; border:none; padding:8px 16px;
+            border-radius:6px; cursor:pointer; font-size:13px; white-space:nowrap;">
+            Copy
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stats Overview (Bento Style) -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+    <div class="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+        <span class="material-symbols-outlined" data-icon="ads_click">ads_click</span>
+      </div>
+      <div>
+        <p class="font-label-sm text-secondary uppercase tracking-widest">Total Clicks</p>
+        <p class="font-h2 text-h2 text-on-background">—</p>
+      </div>
+    </div>
+    <div class="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+        <span class="material-symbols-outlined" data-icon="link">link</span>
+      </div>
+      <div>
+        <p class="font-label-sm text-secondary uppercase tracking-widest">Active Links</p>
+        <!-- ✅ Dynamic count loaded from backend -->
+        <p id="stat-active-links" class="font-h2 text-h2 text-on-background">…</p>
+      </div>
+    </div>
+    <div class="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+        <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+      </div>
+      <div>
+        <p class="font-label-sm text-secondary uppercase tracking-widest">Avg CTR</p>
+        <p class="font-h2 text-h2 text-on-background">—</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links Table -->
+  <section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-outline-variant overflow-hidden">
+    <div class="px-6 py-5 border-b border-outline-variant flex justify-between items-center">
+      <h3 class="font-h3 text-h3 text-on-background">Recent Links</h3>
+      <div class="flex gap-2">
+        <button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-outline" data-icon="filter_list">filter_list</span>
+        </button>
+        <button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-outline" data-icon="download">download</span>
+        </button>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-container-low border-b border-outline-variant">
+            <th class="px-6 py-4 font-label-md text-secondary">Original URL</th>
+            <th class="px-6 py-4 font-label-md text-secondary">Short Link</th>
+            <th class="px-6 py-4 font-label-md text-secondary text-center">Clicks</th>
+            <th class="px-6 py-4 font-label-md text-secondary text-right">Actions</th>
+          </tr>
+        </thead>
+        <!-- ✅ FIX 4: only ONE tbody with the correct id, fake rows deleted -->
+        <tbody id="links-tbody" class="divide-y divide-outline-variant">
+        </tbody>
+      </table>
+    </div>
+    <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex justify-between items-center">
+      <span id="footer-count" class="font-label-sm text-secondary">Loading...</span>
+      <div class="flex gap-2">
+        <button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-bright transition-colors font-label-sm text-on-background">Previous</button>
+        <button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-bright transition-colors font-label-sm text-on-background">Next</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-slate-50 border-t border-slate-200 mt-auto">
+<div class="max-w-[1280px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-semibold text-slate-900">ShortenIt</span>
+<span class="font-sans text-xs text-slate-500">© 2024 ShortenIt. Precise. Capable. Secure.</span>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-xs text-slate-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer" href="#">Terms</a>
+<a class="font-sans text-xs text-slate-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer" href="#">Privacy</a>
+<a class="font-sans text-xs text-slate-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer" href="#">Support</a>
+<a class="font-sans text-xs text-slate-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+
+<!-- ✅ ALL JAVASCRIPT — connects this page to your FastAPI backend -->
+<script>
+
+  // Your FastAPI backend address
+  // If you change the port, update this line
+  const BASE = "http://127.0.0.1:8000";
+
+
+  // ── FUNCTION 1: Called when Shorten button is clicked ─────────
+  async function shortenUrl() {
+
+    // Step 1: Read what the user typed in the input box
+    const input = document.getElementById("url-input");
+    const url = input.value.trim();
+
+    // Step 2: If empty, stop and warn
+    if (!url) {
+      alert("Please enter a URL");
+      return;
+    }
+
+    // Step 3: Show loading state on button so user knows it's working
+    const btn = document.getElementById("shorten-btn");
+    const btnText = document.getElementById("btn-text");
+    btn.disabled = true;
+    btnText.textContent = "Shortening...";
+
+    // Step 4: Send the URL to FastAPI using fetch()
+    // This is exactly like calling: POST http://127.0.0.1:8000/shorten
+    // with the body: { "original_url": "https://..." }
+    const response = await fetch(BASE + "/shorten", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ original_url: url })
+    });
+
+    // Step 5: Read the JSON response that FastAPI sends back
+    const data = await response.json();
+    // data looks like:
+    // { original_url: "https://...", short_code: "AbCd12", short_url: "http://127.0.0.1:8000/AbCd12" }
+
+    // Step 6: Put the short URL into the result box and show it
+    document.getElementById("result-link").textContent = data.short_url;
+    document.getElementById("result-link").href = data.short_url;
+    document.getElementById("result-box").style.display = "block";
+
+    // Step 7: Save the short URL so the Copy button can use it
+    window.lastShortUrl = data.short_url;
+
+    // Step 8: Clear the input and reset the button
+    input.value = "";
+    btn.disabled = false;
+    btnText.textContent = "Shorten";
+
+    // Step 9: Reload the table to show the new link
+    loadAllUrls();
+  }
+
+
+  // ── FUNCTION 2: Load all URLs from backend into the table ──────
+  async function loadAllUrls() {
+
+    // Call GET http://127.0.0.1:8000/all
+    const response = await fetch(BASE + "/all");
+    const urls = await response.json();
+    // urls is an array like:
+    // [ { original_url: "...", short_code: "AbCd12", short_url: "..." }, ... ]
+
+    // Update the Active Links count in the stats section
+    document.getElementById("stat-active-links").textContent = urls.length;
+
+    // Update the footer count
+    document.getElementById("footer-count").textContent =
+      "Showing " + urls.length + " link" + (urls.length !== 1 ? "s" : "");
+
+    // Find the table body
+    const tbody = document.getElementById("links-tbody");
+
+    // If no URLs exist yet, show a message
+    if (urls.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="4" style="text-align:center; padding:40px; color:#737685;">
+            No links yet — shorten your first URL above!
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    // Build a table row for each URL from the backend
+    tbody.innerHTML = urls.map(function(u) {
+      return `
+        <tr id="row-${u.short_code}" class="hover:bg-primary-fixed/20 transition-colors">
+
+          <td class="px-6 py-5">
+            <div class="flex flex-col max-w-xs md:max-w-md">
+              <span class="font-body-md text-on-background truncate" title="${u.original_url}">
+                ${u.original_url}
+              </span>
+            </div>
+          </td>
+
+          <td class="px-6 py-5">
+            <a href="${u.short_url}" target="_blank"
+              class="font-body-md text-primary hover:underline flex items-center gap-1">
+              ${u.short_url}
+              <span class="material-symbols-outlined text-xs">open_in_new</span>
+            </a>
+          </td>
+
+          <td class="px-6 py-5 text-center">
+            <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm">
+              —
+            </span>
+          </td>
+
+          <td class="px-6 py-5 text-right">
+            <div class="flex justify-end gap-2">
+              <button onclick="copyText('${u.short_url}')"
+                class="p-2 hover:bg-surface-container-high rounded text-primary transition-colors flex items-center gap-1 font-label-md">
+                <span class="material-symbols-outlined text-sm">content_copy</span>
+                <span>Copy</span>
+              </button>
+              <button onclick="deleteUrl('${u.short_code}')"
+                class="p-2 hover:bg-error-container/50 rounded text-error transition-colors">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </td>
+
+        </tr>
+      `;
+    }).join("");
+  }
+
+
+  // ── FUNCTION 3: Delete a URL ───────────────────────────────────
+  async function deleteUrl(shortCode) {
+
+    // Ask user to confirm before deleting
+    if (!confirm("Are you sure you want to delete this link?")) return;
+
+    // Call DELETE http://127.0.0.1:8000/delete/AbCd12
+    await fetch(BASE + "/delete/" + shortCode, {
+      method: "DELETE"
+    });
+
+    // Remove the row from the table immediately (no need to reload)
+    const row = document.getElementById("row-" + shortCode);
+    if (row) row.remove();
+
+    // Reload to update the count
+    loadAllUrls();
+  }
+
+
+  // ── FUNCTION 4: Copy text to clipboard ────────────────────────
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("Copied to clipboard!");
+    });
+  }
+
+  // Copy the result short URL after shortening
+  function copyResult() {
+    copyText(window.lastShortUrl);
+  }
+
+
+  // ── Run when the page first opens ─────────────────────────────
+  // Automatically loads all URLs into the table on page load
+  loadAllUrls();
+
+</script>
+
+</body></html>
